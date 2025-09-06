@@ -5,7 +5,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../features/authentication/presentation/login/login_screen.dart';
 import '../features/home/presentation/home_screen.dart';
 import 'fade_extension.dart';
 
@@ -28,11 +27,6 @@ enum SGRoute {
 GoRouter goRouter(Ref ref) => GoRouter(
       initialLocation: SGRoute.login.route,
       routes: <GoRoute>[
-        GoRoute(
-            path: SGRoute.login.route,
-            builder: (BuildContext context, GoRouterState state) {
-              return const LoginScreen();
-            }).fade(),
         GoRoute(
           path: SGRoute.home.route,
           builder: (BuildContext context, GoRouterState state) =>
